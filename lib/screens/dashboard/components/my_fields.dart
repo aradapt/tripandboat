@@ -1,5 +1,5 @@
-import 'package:admin/models/MyFiles.dart';
-import 'package:admin/responsive.dart';
+import 'package:tbmfm/models/MyFiles.dart';
+import 'package:tbmfm/responsive.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';

@@ -1,5 +1,5 @@
-import 'package:admin/responsive.dart';
-import 'package:admin/screens/dashboard/components/my_fields.dart';
+import 'package:tbmfm/responsive.dart';
+import 'package:tbmfm/screens/dashboard/components/my_fields.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';

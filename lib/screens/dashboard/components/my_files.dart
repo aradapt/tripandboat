@@ -1,7 +1,6 @@
-
-import 'package:admin/responsive.dart';
+import 'package:tbmfm/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:admin/models/MyFiles.dart';
+import 'package:tbmfm/models/MyFiles.dart';
 import '../../../constants.dart';
 import 'file_info_card.dart';
 
