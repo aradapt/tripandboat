@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:tbmfm/models/profile.dart';
-import 'package:tbmfm/screens/login/register_screen.dart';
-import 'package:tbmfm/screens/main/main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -32,8 +30,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 20,
                       ),
                       TextFormField(
-                        validator: RequiredValidator(
-                            errorText: 'Please enter your email'),
+                        validator: MultiValidator([
+                          EmailValidator(
+                              errorText: 'Please enter a valid email format'),
+                          RequiredValidator(
+                              errorText: 'Please enter your email')
+                        ]),
                         keyboardType: TextInputType.emailAddress,
                         onSaved: (String? email) {
                           profile.email = email;

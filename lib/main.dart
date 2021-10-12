@@ -1,7 +1,6 @@
 import 'package:tbmfm/constants.dart';
 import 'package:tbmfm/controllers/MenuController.dart';
 import 'package:tbmfm/screens/login/login_screen.dart';
-import 'package:tbmfm/screens/main/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';

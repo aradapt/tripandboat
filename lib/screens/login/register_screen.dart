@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tbmfm/models/profile.dart';
-import 'package:tbmfm/screens/login/register_screen.dart';
-import 'package:tbmfm/screens/main/main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
