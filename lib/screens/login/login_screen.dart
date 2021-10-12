@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tbmfm/models/profile.dart';
 import 'package:tbmfm/screens/login/register_screen.dart';
 import 'package:tbmfm/screens/main/main_screen.dart';
 
@@ -9,6 +10,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final formkey = GlobalKey<FormState>();
+  Profile profile = Profile();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +32,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,
+                        onSaved: (String? email) {
+                          profile.email = email;
+                        },
                       ),
                       SizedBox(
                         height: 20,
