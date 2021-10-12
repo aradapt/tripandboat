@@ -55,7 +55,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(
                         height: 20,
                       ),
-                      ElevatedButton(onPressed: () {}, child: Text('Register')),
+                      ElevatedButton(
+                          onPressed: () {
+                            formkey.currentState!.save();
+                            formkey.currentState!.reset();
+                          },
+                          child: Text('Register')),
                       SizedBox(
                         height: 30,
                       ),
