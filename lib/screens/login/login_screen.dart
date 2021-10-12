@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 import 'package:tbmfm/models/profile.dart';
 import 'package:tbmfm/screens/login/register_screen.dart';
 import 'package:tbmfm/screens/main/main_screen.dart';
@@ -31,6 +32,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 20,
                       ),
                       TextFormField(
+                        validator: RequiredValidator(
+                            errorText: 'Please enter your email'),
                         keyboardType: TextInputType.emailAddress,
                         onSaved: (String? email) {
                           profile.email = email;
@@ -41,6 +44,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       TextFormField(
                         obscureText: true,
+                        validator: RequiredValidator(
+                            errorText: 'Please enter your Password'),
                         onSaved: (String? password) {
                           profile.password = password;
                         },
@@ -57,8 +62,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       ElevatedButton(
                           onPressed: () {
-                            formkey.currentState!.save();
-                            formkey.currentState!.reset();
+                            if (formkey.currentState!.validate()) {
+                              formkey.currentState!.save();
+                              formkey.currentState!.reset();
+                            }
                           },
                           child: Text('Register')),
                       SizedBox(
