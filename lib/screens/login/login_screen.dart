@@ -41,6 +41,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       TextFormField(
                         obscureText: true,
+                        onSaved: (String? password) {
+                          profile.password = password;
+                        },
                       ),
                       SizedBox(
                         height: 20,
