@@ -8,50 +8,57 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+          child: Center(
         child: Padding(
-          padding: const EdgeInsets.only(right: 10, top: 20, left: 10),
+          padding: const EdgeInsets.only(left: 15, right: 15, top: 20),
           child: Card(
-            child:
-                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Column(
-                children: [
-                  Card(
-                    child: SizedBox(
-                      child: ElevatedButton.icon(
-                          onPressed: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) {
-                              return MainScreen();
-                            }));
-                          },
-                          icon: Icon(Icons.login),
-                          label: Text(
-                            'Login',
-                            style: TextStyle(fontSize: 20),
-                          )),
-                    ),
+            child: Container(
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Form(
+                  key: formkey,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        child: Text('TBM & FM Login'),
+                        height: 20,
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      TextFormField(
+                        obscureText: true,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text('Login'),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      ElevatedButton(onPressed: () {}, child: Text('Register')),
+                      SizedBox(
+                        height: 30,
+                      ),
+                    ],
                   ),
-                  SizedBox(
-                    child: ElevatedButton.icon(
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return RegisterScreen();
-                          }));
-                        },
-                        icon: Icon(Icons.group_add),
-                        label: Text('Register')),
-                  )
-                ],
+                ),
               ),
-            ]),
+            ),
           ),
         ),
-      ),
+      )),
     );
   }
 }
